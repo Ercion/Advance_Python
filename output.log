@@ -1,0 +1,3 @@
+½(asctime)s:INFO:main:Line:(lineno)dThis is an info-level lo message
+½(asctime)s:WARNING:main:Line:(lineno)dThis is an warning level message
+½(asctime)s:DEBUG:anotherFunction:Line:(lineno)dThis is a debug level message
