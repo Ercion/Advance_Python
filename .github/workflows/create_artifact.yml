@@ -15,7 +15,7 @@ jobs:
         run: sleep 10 
 
       - name: Debug environment variables
-        run: printenv | grep 'new_artifact' || true
+        run: printenv
   
       - name: Debug ARTIFACT_NAME
         run: echo "ARTIFACT_NAME is set to ${{ env.new_artifact }}"
