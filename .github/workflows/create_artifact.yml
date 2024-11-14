@@ -15,7 +15,7 @@ jobs:
         run: echo "FILENAME is set to ${{ secrets.FILENAME }}"  # Correctly access the secret
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ secrets.FILENAME }}   # Correctly use the secret for the artifact name
           path: .                         # Path to upload all files
