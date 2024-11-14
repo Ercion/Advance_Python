@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Debug new_artifact
-        run: echo "new_artifact is set to ${{ env.new_artifact }}"
+        run: echo "new_artifact is set to ${{ env.NEW_ARTIFACT }}"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
