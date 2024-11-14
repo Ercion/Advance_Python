@@ -12,6 +12,6 @@ jobs:
       - name: upload artifact
         uses: actions/checkout@v1.0.0
         with:
-          name: created_artifact
-          path: ${{ env.FILENAME }}
+          name: ${{ env.FILENAME }}
+          path: .
          
