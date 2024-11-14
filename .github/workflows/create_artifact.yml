@@ -18,10 +18,10 @@ jobs:
         run: printenv
   
       - name: Debug ARTIFACT_NAME
-        run: echo "ARTIFACT_NAME is set to ${{ env.new_artifact }}"
+        run: echo "ARTIFACT_NAME is set to ${{ env.NEW_ARTIFACT }}"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.new_artifact }}
+          name: ${{ env.env.NEW_ARTIFACT }}
           path: .
