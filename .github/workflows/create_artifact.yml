@@ -5,13 +5,16 @@ on: [push]
 jobs:
   create_artifact_job:
     runs-on: ubuntu-latest
+
     steps:
-      - name: checkout actions
+      - name: Checkout code
         uses: actions/checkout@v4
        
-      - name: upload artifact
+      - name: Debug FILENAME
+        run: echo "FILENAME is set to $FILENAME"
+
+      - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ env.FILENAME }}
+          name: ${{ env.FILENAME }}   # Ensure this variable is correctly set in GitHub settings
           path: .
-         
