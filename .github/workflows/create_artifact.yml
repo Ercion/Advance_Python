@@ -6,16 +6,18 @@ jobs:
   create_artifact_job:
     runs-on: ubuntu-latest
     environment: dev
+    env:
+      ARTIFACT_NAME: ${{ env.new_artifact }}
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Debug new_artifact
-        run: echo "new_artifact is set to ${{ env.NEW_ARTIFACT }}"
+      - name: Debug ARTIFACT_NAME
+        run: echo "ARTIFACT_NAME is set to ${{ env.ARTIFACT_NAME }}"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.new_artifact }}
+          name: ${{ env.ARTIFACT_NAME }}
           path: .
