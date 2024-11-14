@@ -11,9 +11,10 @@ jobs:
         uses: actions/checkout@v4
        
       - name: Debug FILENAME
-        run: echo "FILENAME is set to $FILENAME"
         env:
           FILENAME: ${{ env.FILENAME }}
+        run: echo "FILENAME is set to $FILENAME"
+
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
