@@ -5,17 +5,17 @@ on: [push]
 jobs:
   create_artifact_job:
     runs-on: ubuntu-latest
-    environment: dev  # Reference the 'dev' environment if needed
+    environment: dev  # Reference the 'dev' environment (where FILENAME is defined)
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
        
       - name: Debug FILENAME
-        run: echo "FILENAME is set to ${{ secrets.FILENAME }}"  # Correctly access the secret
+        run: echo "FILENAME is set to ${{ env.FILENAME }}"  # Correctly access the environment variable
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
-          name: ${{ secrets.FILENAME }}   # Correctly use the secret for the artifact name
-          path: .                         # Path to upload all files
+          name: ${{ env.FILENAME }}   # Use environment variable for artifact name
+          path: .                     # Path to upload all files
