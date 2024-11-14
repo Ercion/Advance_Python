@@ -5,19 +5,17 @@ on: [push]
 jobs:
   create_artifact_job:
     runs-on: ubuntu-latest
+    environment: dev  # Reference the 'dev' environment where FILENAME is defined
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
        
       - name: Debug FILENAME
-        env:
-          FILENAME: ${{ env.FILENAME }}
-        run: echo "FILENAME is set to $FILENAME"
-
+        run: echo "FILENAME is set to ${{ env.FILENAME }}"  # Access environment variable correctly
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ env.FILENAME }}   # Reference the environment variable for the artifact name
-          path: .
+          name: ${{ env.FILENAME }}   # Correctly use environment variable for the artifact name
+          path: .                     # Path to upload all files
