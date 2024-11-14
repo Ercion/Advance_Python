@@ -11,6 +11,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Wait for environment initialization
+        run: sleep 10 
+
       - name: Debug environment variables
         run: printenv | grep 'new_artifact' || true
   
