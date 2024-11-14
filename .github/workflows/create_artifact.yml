@@ -6,8 +6,6 @@ jobs:
   create_artifact_job:
     runs-on: ubuntu-latest
     environment: dev
-    env:
-      new_artifact: "my_artifact.zip"  # Temporary workaround for testing
 
     steps:
       - name: Checkout code
