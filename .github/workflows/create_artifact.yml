@@ -7,11 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout actions
-        uses: actions/checkout@v2.0.0
+        uses: actions/checkout@v4
        
       - name: upload artifact
         uses: actions/checkout@v1.0.0
         with:
           name: created_artifact
-          path: ./${{ env.FILENAME }}
+          path: ${{ env.FILENAME }}
          
