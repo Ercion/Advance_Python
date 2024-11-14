@@ -11,10 +11,12 @@ jobs:
         uses: actions/checkout@v4
        
       - name: Debug FILENAME
-        run: echo "FILENAME is set to ${{ env.FILENAME }}"
+        run: echo "FILENAME is set to $FILENAME"
+        env:
+          FILENAME: ${{ env.FILENAME }}
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ env.FILENAME }}   # Ensure this variable is correctly set in GitHub settings
+          name: ${{ env.FILENAME }}   # Reference the environment variable for the artifact name
           path: .
