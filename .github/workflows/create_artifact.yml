@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Debug environment variables
-        run: printenv | grep 'new_artifact'
+        run: printenv | grep 'new_artifact' || true
   
       - name: Debug ARTIFACT_NAME
         run: echo "ARTIFACT_NAME is set to ${{ env.new_artifact }}"
