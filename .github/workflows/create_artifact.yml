@@ -12,16 +12,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Wait for environment initialization
-        run: sleep 30 
+        run: sleep 5 
 
       - name: Debug environment variables
         run: printenv
   
       - name: Debug ARTIFACT_NAME
-        run: echo "ARTIFACT_NAME is set to ${{ env.NEW_ARTIFACT }}"
+        run: echo "ARTIFACT_NAME is set to ${{ secrets.NEW_ARTIFACT }}"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.env.NEW_ARTIFACT }}
+          name: ${{ secrets.NEW_ARTIFACT }}
           path: .
